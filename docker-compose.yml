@@ -17,6 +17,8 @@ services:
 
       # Конфиг NATS из репозитория (только чтение).
       - "./config/nats.conf:/etc/nats/nats.conf:ro"
+      # Пароль nats_admin (создать из auth.conf.example, не в git).
+      - "./config/auth.conf:/etc/nats/auth.conf:ro"
 
     command: ["-c", "/etc/nats/nats.conf"]
     
